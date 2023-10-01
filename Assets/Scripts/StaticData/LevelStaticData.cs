@@ -10,32 +10,13 @@ namespace StaticData
     public class LevelStaticData : ScriptableObject
     {
         public string SceneName;
-        public List<ZoneSpawnConfig> ZoneSpawnConfigs = new();
-        public List<BuyZoneSpawnConfig> BuyZoneSpawnConfigs = new();
-        public List<SphereSpawnConfig> SphereSpawnConfigs = new();
+        public List<EnemySpawnConfig> EnemySpawnConfigs = new();
     }
 
     [Serializable]
-    public class ZoneSpawnConfig
+    public class EnemySpawnConfig
     {
-        public ZoneTypeState ZoneType;
-        public Vector3 Position;
-    }
-
-    [Serializable]
-    public class BuyZoneSpawnConfig
-    {
-        public BuyZoneTypeState BuyZoneTypeState;
-        public ZoneTypeState ConnectedZoneTypeState;
-        public Vector3 Position;
-    }
-
-    [Serializable]
-    public class SphereSpawnConfig
-    {
-        public ZoneTypeState MarkerType;
         public Vector3 Position;
         public Vector3 Range;
-
     }
 }

@@ -62,7 +62,7 @@ namespace Infrastructure.StateMachine.Game.States
             {
                 Progress = new ProgressData
                 {
-                    Diamonds = 0
+                    Enemies = 0
                 }
             };
     }

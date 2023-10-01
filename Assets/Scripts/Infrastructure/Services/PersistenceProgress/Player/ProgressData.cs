@@ -6,20 +6,48 @@ namespace Infrastructure.Services.PersistenceProgress
     [Serializable]
     public class ProgressData
     {
-        public Action DiamondsChanged;
+        public Action<int> OnEnemyCountChanged;
+        public Action<int> OnLoseCountChanged;
+        public Action<int> OnWinCountChanged;
         
-        public int Diamonds;
+        public int Enemies;
+        public int WinCount;
+        public int LoseCount;
 
-        public void AddMoney(int value)
+        public void AddEnemyCount(int value)
         {
-            Diamonds += value;
-            DiamondsChanged?.Invoke();
+            Enemies += value;
+            OnEnemyCountChanged?.Invoke(Enemies);
         }
         
-        public void WithdrawMoney(int value)
+        public void WithdrawEnemyCount(int value)
         {
-            Diamonds -= value;
-            DiamondsChanged?.Invoke();
+            Enemies -= value;
+            OnEnemyCountChanged?.Invoke(Enemies);
+        }
+        
+        public void AddWinCount(int value)
+        {
+            WinCount += value;
+            OnWinCountChanged?.Invoke(Enemies);
+        }
+        
+        public void WithdrawWinCount(int value)
+        {
+            WinCount -= value;
+            OnWinCountChanged?.Invoke(Enemies);
+        }
+        
+        public void AddLoseCount(int value)
+        {
+            LoseCount += value;
+            OnLoseCountChanged?.Invoke(Enemies);
+        }
+        
+        public void WithdrawLoseCount(int value)
+        {
+            LoseCount -= value;
+            OnLoseCountChanged?.Invoke(Enemies);
         }
     }
 }

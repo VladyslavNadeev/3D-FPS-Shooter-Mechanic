@@ -20,20 +20,7 @@ namespace Infrastructure.StateMachine.Game.States
 
         public void Enter()
         {
-            /*_gameHud = InitGameHud();
-            InitializeGameHud(_gameHud);*/
-        }
-
-        private void InitializeGameHud(GameObject gameHud)
-        {
             
-        }
-
-        private GameObject InitGameHud()
-        {
-            GameObject gameHud = _gameFactory.CreateGameHud();
-            
-            return gameHud;
         }
 
         public void Update()

@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using Logic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -32,28 +31,10 @@ namespace StaticData.Editor
         {
             levelStaticData.SceneName = SceneManager.GetActiveScene().name;
 
-            levelStaticData.ZoneSpawnConfigs = GameObject.FindObjectsOfType<ZoneSpawnMarker>()
-                .Select(x => new ZoneSpawnConfig
+            levelStaticData.EnemySpawnConfigs = GameObject.FindObjectsOfType<EnemySpawnMarker>()
+                .Select(x => new EnemySpawnConfig()
                 {
-                    Position = x.transform.position,
-                    ZoneType = x.Type
-                })
-                .ToList();
-
-            levelStaticData.BuyZoneSpawnConfigs = GameObject.FindObjectsOfType<BuyZoneSpawnMarker>()
-                .Select(x => new BuyZoneSpawnConfig
-                {
-                    Position = x.transform.position,
-                    BuyZoneTypeState = x.TypeState,
-                    ConnectedZoneTypeState = x.ConnectedZoneTypeState
-                })
-                .ToList();
-
-            levelStaticData.SphereSpawnConfigs = GameObject.FindObjectsOfType<SphereSpawnMarker>()
-                .Select(x => new SphereSpawnConfig
-                {
-                    Position = x.transform.position,
-                    MarkerType = x.Type
+                    Position = x.transform.position
                 })
                 .ToList();
         }

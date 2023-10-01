@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Concrete
+  - Enemy
+  - FxTemporaire
+  - EnemySpawnPoint
   layers:
   - Default
   - TransparentFX
@@ -13,17 +17,17 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - First Person View
+  - Character
+  - Post Processing
+  - Post Processing Weapon
+  - Post Processing Scope
+  - Invisible Wall
+  - Projectile
+  - Ground
+  - EnemySensors
+  - Obstacles
   - 
   - 
   - 
